@@ -391,7 +391,10 @@ export const useDraftUtil = (
       dispatch(createEventSlice.actions.request(event));
     }
 
-    discard();
+    if (isExisting) {
+      alert("discarding cuz exists so already something on grid");
+      discard();
+    }
   };
 
   return {
